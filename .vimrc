@@ -1,4 +1,6 @@
 " Minpac setup
+" To install Minpac, run the following:
+" git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
