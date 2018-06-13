@@ -25,7 +25,6 @@ let mapleader = ' '
 
 " Syntax highlighting
 colorscheme nord
-let g:nord_comment_brightness = 8
 
 " Tabs like I like them
 " set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
