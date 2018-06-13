@@ -9,7 +9,6 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('tpope/vim-sensible')
 call minpac#add('arcticicestudio/nord-vim')
 
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'w0rp/ale'
 " Plug 'easymotion/vim-easymotion' 
 " Plug 'mattn/emmet-vim'
@@ -41,8 +40,9 @@ set number
 " let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 " let g:ale_fixers['json'] = ['prettier']
 
-" Fuzzy Find key map
-" map <C-n> :FZF<CR>
+" Fuzzy Find
+set rtp+=/usr/local/opt/fzf
+map <C-p> :FZF<CR>
 
 " JSX settings
 " let g:jsx_ext_required = 0
