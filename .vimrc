@@ -41,6 +41,8 @@ set number
 " let g:ale_fixers['json'] = ['prettier']
 
 " Fuzzy Find
+" To install fzf, run the following:
+" brew install fzf
 set rtp+=/usr/local/opt/fzf
 map <C-p> :FZF<CR>
 
