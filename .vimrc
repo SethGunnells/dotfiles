@@ -69,6 +69,7 @@ call minpac#add('mattn/emmet-vim')
 " NERDTree
 call minpac#add('scrooloose/nerdtree')
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
 
 " NERDCommenter
 call minpac#add('scrooloose/nerdcommenter')
