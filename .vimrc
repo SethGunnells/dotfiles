@@ -17,6 +17,9 @@ set colorcolumn=81
 set rtp+=/usr/local/opt/fzf
 map <C-p> :FZF<CR>
 
+" Use 'jk' to get out of insert mode
+inoremap jk <Esc>
+
 " ------- "
 " PLUGINS "
 " ------- "
