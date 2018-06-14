@@ -63,8 +63,9 @@ let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 let g:ale_fixers['json'] = ['prettier']
 
+" Emmet
+call minpac#add('mattn/emmet-vim')
+
 " ----------- "
 " END PLUGINS "
 " ----------- "
-
-" Plug 'mattn/emmet-vim'
