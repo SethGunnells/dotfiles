@@ -76,6 +76,8 @@ call minpac#add('scrooloose/nerdcommenter')
 let g:NERDSpaceDelims = 1
 
 " Completion support (YouCompleteMe)
+" See the following site for information on how to install YouCompleteMe:
+" http://valloric.github.io/YouCompleteMe/
 call minpac#add('valloric/youcompleteme')
 
 " ----------- "
