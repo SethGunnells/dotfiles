@@ -52,6 +52,9 @@ let g:jsx_ext_required = 0
 
 " Vim Surround
 call minpac#add('tpope/vim-surround')
+
+" Fugitive, a git plugin
+call minpac#add('tpope/vim-fugitive')
 " ----------- "
 " END PLUGINS "
 " ----------- "
