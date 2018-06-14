@@ -75,6 +75,9 @@ let NERDTreeShowHidden = 1
 call minpac#add('scrooloose/nerdcommenter')
 let g:NERDSpaceDelims = 1
 
+" Completion support (YouCompleteMe)
+call minpac#add('valloric/youcompleteme')
+
 " ----------- "
 " END PLUGINS "
 " ----------- "
