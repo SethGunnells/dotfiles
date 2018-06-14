@@ -15,8 +15,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
 
+" Easy Motion
+call minpac#add('easymotion/vim-easymotion')
+
 " Plug 'w0rp/ale'
-" Plug 'easymotion/vim-easymotion' 
 " Plug 'mattn/emmet-vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
