@@ -66,6 +66,14 @@ let g:ale_fixers['json'] = ['prettier']
 " Emmet
 call minpac#add('mattn/emmet-vim')
 
+" NERDTree
+call minpac#add('scrooloose/nerdtree')
+map <C-n> :NERDTreeToggle<CR>
+
+" NERDComment
+call minpac#add('scrooloose/nerdcommenter')
+let g:NERDSpaceDelims = 1
+
 " ----------- "
 " END PLUGINS "
 " ----------- "
