@@ -47,6 +47,7 @@ call minpac#add('easymotion/vim-easymotion')
 " JavaScript support
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('mxw/vim-jsx')
+let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
 " ----------- "
