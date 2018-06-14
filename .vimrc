@@ -13,7 +13,7 @@ call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('vim-airline/vim-airline')
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
 
 " Plug 'w0rp/ale'
 " Plug 'easymotion/vim-easymotion' 
