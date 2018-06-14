@@ -50,6 +50,8 @@ call minpac#add('mxw/vim-jsx')
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
+" Vim Surround
+call minpac#add('tpope/vim-surround')
 " ----------- "
 " END PLUGINS "
 " ----------- "
