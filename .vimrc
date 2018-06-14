@@ -1,7 +1,7 @@
 " Change the leader to space
 nnoremap <Space> <NOP>
 let mapleader = ' '
-"
+
 " Tabs
 set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 
@@ -44,6 +44,11 @@ let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
 " Easy Motion
 call minpac#add('easymotion/vim-easymotion')
 
+" JavaScript support
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('mxw/vim-jsx')
+let g:jsx_ext_required = 0
+
 " ----------- "
 " END PLUGINS "
 " ----------- "
@@ -59,7 +64,3 @@ call minpac#add('easymotion/vim-easymotion')
 " let g:ale_fixers = {}
 " let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 " let g:ale_fixers['json'] = ['prettier']
-
-" JSX settings
-" let g:jsx_ext_required = 0
-
