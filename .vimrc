@@ -31,8 +31,8 @@ let mapleader = ' '
 " Syntax highlighting
 colorscheme nord
 
-" Tabs like I like them
-" set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+" Tabs
+set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " Line numbers
 set number
