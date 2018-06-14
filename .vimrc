@@ -38,7 +38,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 set number
 
 " Add marker for 80 character limit
-" set colorcolumn=81
+set colorcolumn=81
 
 " ALE settings
 " let g:ale_fix_on_save = 1
