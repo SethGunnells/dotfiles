@@ -1,0 +1,16 @@
+[user]
+	name = Seth Gunnells
+	email = sgunnells@gsandf.com
+[status]
+	short = true
+	branch = true
+[push]
+	default = current
+[core]
+	excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	s = status
+	d = diff
+	cm = commit
+	dc = diff --cached
