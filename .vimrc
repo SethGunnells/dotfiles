@@ -53,6 +53,9 @@ call minpac#add('mxw/vim-jsx')
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
+" Enhanced C# support
+call minpac#add('OrangeT/vim-csharp')
+
 " Vim Surround
 call minpac#add('tpope/vim-surround')
 
