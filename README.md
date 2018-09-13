@@ -5,7 +5,7 @@ This is a full repository of my development environment as it currently stands. 
 ## Steps
 
 ### Alfred
-[] Add preferences from iCloud
+- [ ] Add preferences from iCloud
 
 ### Setup SSH key to pull down this repo
 Github has an [excellent article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this.
@@ -14,10 +14,10 @@ Github has an [excellent article](https://help.github.com/articles/generating-a-
 I use:
 - [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh): `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 - [Pure Prompt](https://github.com/sindresorhus/pure)
-[] ZSH Syntax Highlighting
+- [ ] ZSH Syntax Highlighting
 
-[] Add pure prompt install instructions to this file
-[] Add default ZSHRC
+- [ ] Add pure prompt install instructions to this file
+- [ ] Add default ZSHRC
 
 ## Terminal
 Use the provided terminal preferences file and [Fira Code](https://github.com/tonsky/FiraCode) as the font.
