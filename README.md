@@ -59,6 +59,7 @@ export EDITOR="$VISUAL"
 - Install [Homebrew](https://brew.sh/)
 - Install the latest version of vim via Homebrew
 - Link the vimrc: `ln .vimrc ~/.vimrc`
+- Follow instuctions in the vimrc
 - Install the latest version of tmux via Homebrew
 - Link the tmux config: `ln .tmux.conf ~/.tmux.conf`
 
