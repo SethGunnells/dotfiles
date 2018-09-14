@@ -20,6 +20,10 @@ Github has an [excellent article](https://help.github.com/articles/generating-a-
 ### Dev folder
 Add a folder under `~` called `dev`, cd into it, and clone this repo.
 
+### Setup Terminal
+- Apply the terminal preferences file in this repo
+- Use [Fira Code](https://github.com/tonsky/FiraCode) as the font
+
 ### Alfred
 - [Download Alfred](https://www.alfredapp.com/)
 - Apply Powerpack from 1Password vault
@@ -50,11 +54,6 @@ ZSH_DISABLE_COMPFIX=true
 export VISUAL=vim
 export EDITOR="$VISUAL"
 ```
-
-### Setup Terminal
-- Apply the terminal preferences file in this repo
-- Use [Fira Code](https://github.com/tonsky/FiraCode) as the font
-
 
 ## Todo
 - [ ] Add section on favorite command line tools
