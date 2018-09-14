@@ -14,6 +14,9 @@ I use Firefox Color to theme it. [This is the theme I made.](https://color.firef
 - Log in
 - Add browser extensions
 
+### Setup SSH key to pull down this repo
+Github has an [excellent article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this.
+
 ### Alfred
 - [Download Alfred](https://www.alfredapp.com/)
 - Apply Powerpack from 1Password vault
@@ -21,9 +24,6 @@ I use Firefox Color to theme it. [This is the theme I made.](https://color.firef
 - Disable Spotlight
 - Replace with Alfred's hotkey
 - Use Nord theme contained in this repo
-
-### Setup SSH key to pull down this repo
-Github has an [excellent article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this.
 
 ### Setup ZSH
 I use:
