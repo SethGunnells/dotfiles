@@ -55,5 +55,10 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 ```
 
+### Set up command line tools
+- Install [Homebrew](https://brew.sh/)
+- Install the latest version of vim via Homebrew
+- Install the latest version of tmux via Homebrew
+
 ## Todo
 - [ ] Add section on favorite command line tools
