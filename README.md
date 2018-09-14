@@ -48,5 +48,10 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 ```
 
-## Terminal
-Use the provided terminal preferences file and [Fira Code](https://github.com/tonsky/FiraCode) as the font.
+### Setup Terminal
+- Apply the terminal preferences file in this repo
+- Use [Fira Code](https://github.com/tonsky/FiraCode) as the font
+
+
+## Todo
+- [ ] Add section on favorite command line tools
