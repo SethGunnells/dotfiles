@@ -28,11 +28,25 @@ Github has an [excellent article](https://help.github.com/articles/generating-a-
 ### Setup ZSH
 I use:
 - [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh): `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-- [Pure Prompt](https://github.com/sindresorhus/pure)
-- [ ] ZSH Syntax Highlighting
+- [Pure Prompt](https://github.com/sindresorhus/pure) (See setup instructions below)
+- [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-- [ ] Add pure prompt install instructions to this file
-- [ ] Add default ZSHRC
+#### Setting up Pure Prompt
+Copy `prompt-pure-setup` and `async` from this repo into `~/.oh-my-zsh/functions`
+In `.zshrc`, set `ZSH_THEME=""` and add the following lines:
+```
+autoload -U promptinit; promptinit
+prompt pure
+```
+
+#### Default .zshrc
+```
+# may need to add this if Oh My ZSH complains about unsafe completion directories
+ZSH_DISABLE_COMPFIX=true
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+```
 
 ## Terminal
 Use the provided terminal preferences file and [Fira Code](https://github.com/tonsky/FiraCode) as the font.
