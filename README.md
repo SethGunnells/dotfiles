@@ -4,23 +4,23 @@ This is a full repository of my development environment as it currently stands. 
 
 ## Steps
 
-### Setup Firefox
+### Set up Firefox
 My current preferred browser is [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/).
 
 I use Firefox Color to theme it. [This is the theme I made.](https://color.firefox.com/?theme=XQAAAALjAAAAAAAAAABBKYhm849SCiazH1KEGccwS-xNVAVUlUkhy_b8flDkc4UL33TIxTlTBxvpqcTQaoQxwR8u1HUiiDYveh-M-eU1wzW5Co2u-jUndDeMDET1hJsyxnqtFmlLJbM4HjZDYfuJi-ER6RQB47zQ_RAHIaiLdzT1qC2SYFLXgRfirt_XCa7GyNK_RKT7gZAn0YiKiodSKK9UuWkYdSLPW4QWdeGmZyMv_-mEOAA)
 
-### Setup 1Password
+### Set up 1Password
 - [Download 1Password](https://1password.com/)
 - Log in
 - Add browser extensions
 
-### Setup SSH key to pull down this repo
+### Set up SSH key to pull down this repo
 Github has an [excellent article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this.
 
 ### Dev folder
 Add a folder under `~` called `dev`, cd into it, and clone this repo.
 
-### Setup Terminal
+### Set up Terminal
 - Apply the terminal preferences file in this repo
 - Use [Fira Code](https://github.com/tonsky/FiraCode) as the font
 
@@ -32,7 +32,7 @@ Add a folder under `~` called `dev`, cd into it, and clone this repo.
 - Replace with Alfred's hotkey
 - Use Nord theme contained in this repo
 
-### Setup ZSH
+### Set up ZSH
 I use:
 - [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh): `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 - [Pure Prompt](https://github.com/sindresorhus/pure) (See setup instructions below)
