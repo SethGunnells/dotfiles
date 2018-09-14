@@ -17,6 +17,9 @@ I use Firefox Color to theme it. [This is the theme I made.](https://color.firef
 ### Setup SSH key to pull down this repo
 Github has an [excellent article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this.
 
+### Dev folder
+Add a folder under `~` called `dev`, cd into it, and clone this repo.
+
 ### Alfred
 - [Download Alfred](https://www.alfredapp.com/)
 - Apply Powerpack from 1Password vault
