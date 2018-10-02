@@ -65,10 +65,12 @@ call minpac#add('tpope/vim-fugitive')
 
 " ALE settings
 call minpac#add('w0rp/ale')
+let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 let g:ale_fixers['json'] = ['prettier']
+let g:ale_javascript_eslint_executable = 'eslint_d'
 
 " Emmet
 call minpac#add('mattn/emmet-vim')
