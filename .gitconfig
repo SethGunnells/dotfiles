@@ -9,8 +9,9 @@
 [core]
 	excludesfile = ~/.gitignore
 [alias]
+	ap = add --patch
 	co = checkout
-	s = status
-	d = diff
 	cm = commit
+	d = diff
 	dc = diff --cached
+	s = status
