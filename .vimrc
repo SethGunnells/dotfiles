@@ -70,7 +70,9 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 let g:ale_fixers['json'] = ['prettier']
+" Need to run `yarn global add eslint_d` for these lines to work
 let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1
 
 " Emmet
 call minpac#add('mattn/emmet-vim')
@@ -88,6 +90,10 @@ let g:NERDSpaceDelims = 1
 " See the following site for information on how to install YouCompleteMe:
 " http://valloric.github.io/YouCompleteMe/
 call minpac#add('valloric/youcompleteme')
+let g:ycm_show_diagnostics_ui = 0
+
+" Automatically add pairs for certain characters
+call minpac#add('jiangmiao/auto-pairs')
 
 " ----------- "
 " END PLUGINS "
