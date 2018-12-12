@@ -91,6 +91,7 @@ let g:NERDSpaceDelims = 1
 " http://valloric.github.io/YouCompleteMe/
 call minpac#add('valloric/youcompleteme')
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Automatically add pairs for certain characters
 call minpac#add('jiangmiao/auto-pairs')
