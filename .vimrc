@@ -96,6 +96,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Automatically add pairs for certain characters
 call minpac#add('jiangmiao/auto-pairs')
 
+" Twig support
+call minpac#add('lumiliet/vim-twig')
+
 " ----------- "
 " END PLUGINS "
 " ----------- "
