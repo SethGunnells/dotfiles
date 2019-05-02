@@ -22,7 +22,7 @@ Add a folder under `~` called `dev`, cd into it, and clone this repo.
 
 ### Set up Terminal
 - Apply the terminal preferences file in this repo
-- Use [Fira Code](https://github.com/tonsky/FiraCode) as the font
+- Use [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans/releases) as the font
 
 ### Alfred
 - [Download Alfred](https://www.alfredapp.com/)
@@ -47,6 +47,7 @@ prompt pure
 ```
 
 #### Default .zshrc
+Be careful not to delete the essential Oh My ZSH parts from the config file!
 ```
 # may need to add this if Oh My ZSH complains about unsafe completion directories
 ZSH_DISABLE_COMPFIX=true
@@ -62,6 +63,30 @@ export EDITOR="$VISUAL"
 - Follow instuctions in the vimrc
 - Install the latest version of tmux via Homebrew
 - Link the tmux config: `ln .tmux.conf ~/.tmux.conf`
+- Install the following Homebrew packages:
+  - `csvkit`
+  - `fd`
+  - `jq`
+  - `the_silver_searcher` (`ag`)
+  - `tldr`
+
+### Setting Up FZF
+
+### Setting Up MPD and NCMPCPP
+
+### Setting Up BAT
+
+### Setting Up Diff-So-Fancy
+
+### Setting Up HTOP
+
+### Setting Up NCDU
 
 ## Todo
-- [ ] Add section on favorite command line tools
+- [ ] Add install link for Spotify
+- [ ] Add install instructions for MPD and NCMPCPP
+- [ ] Add section on Firefox extensions (Trydactyl)
+- [ ] Add support for Neovim, possibly replacing vim altogether
+- [ ] Add section on Slack (installation and theming if necessary)
+- [ ] Add section on VSCode (installation, theming, plugins)
+- [ ] Add section on git files
