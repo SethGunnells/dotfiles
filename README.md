@@ -52,13 +52,31 @@ prompt pure
 ```
 
 #### Default .zshrc
-Be careful not to delete the essential Oh My ZSH parts from the config file!
+**NOTE:** Some of the lines in this .zshrc file have to do with command line tools
+installed in a later step.
+
 ```
+export ZSH=$HOME/.oh-my-zsh
+
+plugins=(git zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+autoload -U promptinit; promptinit
+prompt pure
+
 # may need to add this if Oh My ZSH complains about unsafe completion directories
 ZSH_DISABLE_COMPFIX=true
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+# export HOMEBREW_GITHUB_API_TOKEN=???
+
+alias cat="bat"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias help="tldr"
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias top="sudo htop"
 ```
 
 ### Set up command line tools
@@ -69,23 +87,23 @@ export EDITOR="$VISUAL"
 - Install the latest version of tmux via Homebrew
 - Link the tmux config: `ln .tmux.conf ~/.tmux.conf`
 - Install the following Homebrew packages:
+  - `bat`
   - `csvkit`
+  - `diff-so-fancy`
   - `fd`
+  - `fzf`
+  - `htop`
   - `jq`
+  - `mpd`
+  - `ncdu`
+  - `ncmpcpp`
   - `the_silver_searcher` (`ag`)
   - `tldr`
 
-### Setting Up FZF
+#### Setting Up FZF
+Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/install`
 
-### Setting Up MPD and NCMPCPP
-
-### Setting Up BAT
-
-### Setting Up Diff-So-Fancy
-
-### Setting Up HTOP
-
-### Setting Up NCDU
+#### Setting Up Beets, MPD and NCMPCPP
 
 ## Todo
 - [ ] Add install link for Spotify
