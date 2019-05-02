@@ -103,6 +103,18 @@ alias top="sudo htop"
 #### Setting Up FZF
 Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/install`
 
+#### Setting Up Tmuxinator
+Install tmuxinator via:
+```
+sudo gem install tmuxinator -n /usr/local/bin
+```
+
+You may need to override the Mac system ruby by installing it via Homebrew and
+prefixing it in your $PATH like so in the .zshrc:
+```
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+```
+
 #### Setting Up Beets, MPD and NCMPCPP
 
 ## Todo
