@@ -9,6 +9,11 @@ My current preferred browser is [Firefox Developer Edition](https://www.mozilla.
 
 I use Firefox Color to theme it. [This is the theme I made.](https://color.firefox.com/?theme=XQAAAALjAAAAAAAAAABBKYhm849SCiazH1KEGccwS-xNVAVUlUkhy_b8flDkc4UL33TIxTlTBxvpqcTQaoQxwR8u1HUiiDYveh-M-eU1wzW5Co2u-jUndDeMDET1hJsyxnqtFmlLJbM4HjZDYfuJi-ER6RQB47zQ_RAHIaiLdzT1qC2SYFLXgRfirt_XCa7GyNK_RKT7gZAn0YiKiodSKK9UuWkYdSLPW4QWdeGmZyMv_-mEOAA)
 
+#### Firefox Extensions
+
+##### [Trydactyl](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/)
+Change default search engine to DuckDuckGo: `set searchengine duckduckgo`
+
 ### Set up 1Password
 - [Download 1Password](https://1password.com/)
 - Log in
@@ -85,7 +90,6 @@ export EDITOR="$VISUAL"
 ## Todo
 - [ ] Add install link for Spotify
 - [ ] Add install instructions for MPD and NCMPCPP
-- [ ] Add section on Firefox extensions (Trydactyl)
 - [ ] Add support for Neovim, possibly replacing vim altogether
 - [ ] Add section on Slack (installation and theming if necessary)
 - [ ] Add section on VSCode (installation, theming, plugins)
