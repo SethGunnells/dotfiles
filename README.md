@@ -95,13 +95,25 @@ alias top="sudo htop"
   - `htop`
   - `jq`
   - `mpd`
+  - `n`
   - `ncdu`
   - `ncmpcpp`
   - `the_silver_searcher` (`ag`)
   - `tldr`
+  - `yarn`
 
 #### Setting Up FZF
 Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/install`
+
+#### Setting Up Node
+Run the following:
+```
+n lts
+```
+
+You may need to modify the ownership of certain directories so that you don't
+have to run this with sudo. Additionally, a version of Node will be installed
+with Yarn. Running the above command is mainly to make sure that `n` works.
 
 #### Setting Up Tmuxinator
 Install tmuxinator via:
