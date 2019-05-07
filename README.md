@@ -101,6 +101,9 @@ alias top="sudo htop"
   - `the_silver_searcher` (`ag`)
   - `tldr`
   - `yarn`
+- Install the following global Node tools:
+  - `npx`
+  - `prettier`
 
 #### Setting Up FZF
 Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/install`
