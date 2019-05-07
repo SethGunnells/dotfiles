@@ -105,6 +105,10 @@ alias top="sudo htop"
   - `npx`
   - `prettier`
 
+#### Setting Up Git
+Copy `.gitconfig` and `.gitignore` into the home directory. Change the user
+email in `.gitconfig` to whatever is appropriate for this machine.
+
 #### Setting Up FZF
 Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/install`
 
@@ -132,10 +136,14 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 #### Setting Up Beets, MPD and NCMPCPP
 
+### Setting Up Slack (If Necessary)
+Install as normal and apply this theme:
+```
+#2E3440,#434C5E,#81A1C1,#ECEFF4,#434C5E,#ECEFF4,#A3BE8C,#BF616A
+```
+
 ## Todo
 - [ ] Add install link for Spotify
 - [ ] Add install instructions for MPD and NCMPCPP
 - [ ] Add support for Neovim, possibly replacing vim altogether
-- [ ] Add section on Slack (installation and theming if necessary)
 - [ ] Add section on VSCode (installation, theming, plugins)
-- [ ] Add section on git files
