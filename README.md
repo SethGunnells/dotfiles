@@ -70,7 +70,7 @@ ZSH_DISABLE_COMPFIX=true
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-# export HOMEBREW_GITHUB_API_TOKEN=???
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 
 alias cat="bat"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
@@ -81,11 +81,6 @@ alias top="sudo htop"
 
 ### Set up command line tools
 - Install [Homebrew](https://brew.sh/)
-- Install the latest version of vim via Homebrew
-- Link the vimrc: `ln .vimrc ~/.vimrc`
-- Follow instuctions in the vimrc
-- Install the latest version of tmux via Homebrew
-- Link the tmux config: `ln .tmux.conf ~/.tmux.conf`
 - Install the following Homebrew packages:
   - `bat`
   - `csvkit`
@@ -100,10 +95,12 @@ alias top="sudo htop"
   - `ncmpcpp`
   - `the_silver_searcher` (`ag`)
   - `tldr`
-  - `yarn`
 - Install the following global Node tools:
   - `npx`
   - `prettier`
+- Add config directory for nvim: `mkdir ~/.config/nvim`
+- Link the nvim config: `ln -s init.vim ~/.config/nvim/init.vim`
+- Link the tmux config: `ln -s .tmux.conf ~/.tmux.conf`
 
 #### Setting Up Git
 Copy `.gitconfig` and `.gitignore` into the home directory. Change the user
@@ -145,5 +142,4 @@ Install as normal and apply this theme:
 ## Todo
 - [ ] Add install link for Spotify
 - [ ] Add install instructions for MPD and NCMPCPP
-- [ ] Add support for Neovim, possibly replacing vim altogether
 - [ ] Add section on VSCode (installation, theming, plugins)
