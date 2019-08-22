@@ -143,3 +143,4 @@ Install as normal and apply this theme:
 - [ ] Add install link for Spotify
 - [ ] Add install instructions for MPD and NCMPCPP
 - [ ] Add section on VSCode (installation, theming, plugins)
+- [ ] Add section on Dash
