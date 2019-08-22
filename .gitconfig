@@ -14,6 +14,7 @@
 	cm = commit
 	d = diff
 	dc = diff --cached
+	pfl = push --force-with-lease
 	s = status
 [pager]
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
