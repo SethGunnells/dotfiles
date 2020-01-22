@@ -20,6 +20,10 @@ map <C-p> :FZF<CR>
 " Use 'jk' to get out of insert mode
 inoremap jk <Esc>
 
+" Allow use of local (per-project) config files
+set exrc
+set secure
+
 " ------- "
 " PLUGINS "
 " ------- "
@@ -48,20 +52,40 @@ let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
 call minpac#add('easymotion/vim-easymotion')
 
 " Deoplete
-call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+call minpac#add('Shougo/deoplete.nvim')
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#ignore_case = 1
+let g:deoplete#sources = {'_': ['around', 'buffer', 'file']}
+
+" ALE settings
+call minpac#add('dense-analysis/ale')
+let g:ale_linters = {}
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {}
+let g:ale_fixers['json'] = ['prettier']
+
+" JavaScript support
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('maxmellon/vim-jsx-pretty')
+call minpac#add('styled-components/vim-styled-components')
+let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0
+let g:ale_linters['javascript'] = ['eslint']
+let g:ale_fixers['javascript'] = ['eslint']
+
+" TypeScript support
+call minpac#add('leafgarland/typescript-vim')
+let g:ale_linters['typescript'] = ['tsserver', 'eslint']
+let g:ale_fixers['typescript'] = ['eslint']
+
+" Enhanced C# support
+call minpac#add('OrangeT/vim-csharp')
 
 " Vim Surround
 call minpac#add('tpope/vim-surround')
 
 " Fugitive, a git plugin
 call minpac#add('tpope/vim-fugitive')
-
-" ALE settings
-call minpac#add('w0rp/ale')
-let g:ale_fix_on_save = 1
-let g:ale_linters = {}
-let g:ale_fixers = {}
 
 " Emmet
 call minpac#add('mattn/emmet-vim')
@@ -75,24 +99,15 @@ let NERDTreeShowHidden = 1
 call minpac#add('scrooloose/nerdcommenter')
 let g:NERDSpaceDelims = 1
 
-" JavaScript support
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('styled-components/vim-styled-components')
-let g:javascript_plugin_jsdoc = 1
-let g:jsx_ext_required = 0
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-let g:ale_fixers['json'] = ['prettier']
-let g:ale_linters['javascript'] = ['eslint']
-
-" Enhanced C# support
-call minpac#add('OrangeT/vim-csharp')
-
 " Automatically add pairs for certain characters
 call minpac#add('jiangmiao/auto-pairs')
 
 " Twig support
 call minpac#add('lumiliet/vim-twig')
+
+" Scala support
+call minpac#add('derekwyatt/vim-scala')
+let g:ale_linters['scala'] = ['sbtserver']
 
 " ----------- "
 " END PLUGINS "

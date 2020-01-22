@@ -1,6 +1,6 @@
 [user]
 	name = Seth Gunnells
-	email = sethgunnells@gmail.com
+	email = seth.gunnells@asurion.com
 [status]
 	short = true
 	branch = true
@@ -16,6 +16,7 @@
 	dc = diff --cached
 	pfl = push --force-with-lease
 	s = status
+	tidy = !git branch --merged | ag -v \"^(\\*|master|develop)\" | xargs git branch -d
 [pager]
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
 	show = diff-so-fancy | less --tabs=1,5 -RFX
