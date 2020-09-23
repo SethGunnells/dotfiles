@@ -51,27 +51,26 @@ let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
 " Easy Motion
 call minpac#add('easymotion/vim-easymotion')
 
-" Deoplete
-call minpac#add('Shougo/deoplete.nvim')
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_case = 1
-let g:deoplete#sources = {'_': ['around', 'buffer', 'file']}
-
 " ALE settings
 call minpac#add('dense-analysis/ale')
+nmap <Leader>n :ALENext<CR>
+nmap <Leader>N :ALEPrevious<CR>
+let g:ale_completion_enabled = 1
 let g:ale_linters = {}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {}
-let g:ale_fixers['json'] = ['prettier']
 
 " JavaScript support
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('styled-components/vim-styled-components')
+call minpac#add('jparise/vim-graphql')
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
-let g:ale_linters['javascript'] = ['eslint']
-let g:ale_fixers['javascript'] = ['eslint']
+let g:kite_supported_languages = ['javascript']
+let g:ale_linters['javascript'] = ['eslint', 'tsserver']
+let g:ale_fixers['javascript'] = ['eslint', 'prettier']
+let g:ale_fixers['json'] = ['prettier']
 
 " TypeScript support
 call minpac#add('leafgarland/typescript-vim')
@@ -108,6 +107,17 @@ call minpac#add('lumiliet/vim-twig')
 " Scala support
 call minpac#add('derekwyatt/vim-scala')
 let g:ale_linters['scala'] = ['sbtserver']
+
+" Codebase searching
+call minpac#add('mileszs/ack.vim')
+let g:ackprg = 'ag --vimgrep'
+
+" Fluent support
+call minpac#add('projectfluent/fluent.vim')
+
+" Jinja support
+call minpac#add('Glench/Vim-Jinja2-Syntax')
+autocmd BufNewFile,BufRead *.njk set syntax=jinja
 
 " ----------- "
 " END PLUGINS "
