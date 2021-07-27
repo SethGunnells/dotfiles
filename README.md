@@ -39,23 +39,40 @@ Add a folder under `~` called `dev`, cd into it, and clone this repo.
 
 ### Set up ZSH
 I use:
-- [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh): `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+- [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh): `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - [Pure Prompt](https://github.com/sindresorhus/pure) (See setup instructions below)
 - [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-#### Setting up Pure Prompt
-Copy `prompt-pure-setup` and `async` from this repo into `~/.oh-my-zsh/functions`
-In `.zshrc`, set `ZSH_THEME=""` and add the following lines:
+#### Setting Up Pure Prompt
+Install pure globally through npm
+```sh
+npm install --global pure-prompt
 ```
+
+Copy `prompt-pure-setup` and `async` from this repo into `~/.oh-my-zsh/functions`
+```sh
+mkdir ~/.oh-my-zsh/functions
+cp async prompt_pure_setup ~/.oh-my-zsh/functions
+```
+
+In `.zshrc`, set `ZSH_THEME=""` and add the following lines:
+```sh
 autoload -U promptinit; promptinit
 prompt pure
+```
+
+#### Setting Up Zsh Syntax Highlighting
+
+Clone the zsh-syntax-highlighting repository into plugins folder
+```sh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 #### Default .zshrc
 **NOTE:** Some of the lines in this .zshrc file have to do with command line tools
 installed in a later step.
 
-```
+```sh
 export ZSH=$HOME/.oh-my-zsh
 
 plugins=(git zsh-syntax-highlighting)
@@ -111,7 +128,7 @@ Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/instal
 
 #### Setting Up Node
 Run the following:
-```
+```sh
 n lts
 ```
 
@@ -121,13 +138,13 @@ with Yarn. Running the above command is mainly to make sure that `n` works.
 
 #### Setting Up Tmuxinator
 Install tmuxinator via:
-```
+```sh
 sudo gem install tmuxinator -n /usr/local/bin
 ```
 
 You may need to override the Mac system ruby by installing it via Homebrew and
 prefixing it in your $PATH like so in the .zshrc:
-```
+```sh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 ```
 
@@ -135,7 +152,7 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 ### Setting Up Slack (If Necessary)
 Install as normal and apply this theme:
-```
+```css
 #2E3440,#434C5E,#81A1C1,#ECEFF4,#434C5E,#ECEFF4,#A3BE8C,#BF616A
 ```
 
