@@ -115,8 +115,7 @@ alias top="sudo htop"
 - Install the following global Node tools:
   - `npx`
   - `prettier`
-- Add config directory for nvim: `mkdir ~/.config/nvim`
-- Link the nvim config: `ln -s init.vim ~/.config/nvim/init.vim`
+- Link config directory for nvim: `mkdir ~/.config/nvim`
 - Link the tmux config: `ln -s .tmux.conf ~/.tmux.conf`
 
 #### Setting Up Git
