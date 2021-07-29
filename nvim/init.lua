@@ -5,6 +5,7 @@ local map = vim.api.nvim_set_keymap
 local g = vim.g
 local o = vim.o
 local api = vim.api
+local cmd = api.nvim_command
 
 -- map the leader key
 map('n', '<Space>', '', { noremap = true })
@@ -29,6 +30,8 @@ o.sidescrolloff = 10
 o.shiftwidth = 2
 -- Allow 256-bit colors
 o.termguicolors = true
+
+cmd('autocmd BufRead,BufNewFile .eslintrc set filetype=json')
 
 -------------
 -- PLUGINS --
@@ -81,6 +84,10 @@ require'completion'
 require'tree'
 require'tabs'
 require'telescope-conf'
+
+-----------------
+-- END PLUGINS --
+-----------------
 
 -- Allow local ".nvimrc.lua" files
 local local_vimrc = vim.fn.getcwd()..'/.nvimrc.lua'
