@@ -1,5 +1,9 @@
 local map = vim.api.nvim_set_keymap
+
+require'telescope'.setup()
+require'telescope'.load_extension('fzy_native')
 telescope = require'telescope.builtin'
+
 map('n', '<leader>f', '<cmd>lua telescope.find_files()<CR>', { noremap = true, silent = true })
 map('n', '<leader>g', '<cmd>lua telescope.grep_string()<CR>', { noremap = true, silent = true })
 map('n', '<leader>G', '<cmd>lua telescope.live_grep()<CR>', { noremap = true, silent = true })

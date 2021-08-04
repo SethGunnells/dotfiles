@@ -68,6 +68,7 @@ require 'paq-nvim' {
   'nvim-lua/popup.nvim';
   'nvim-lua/plenary.nvim';
   'nvim-telescope/telescope.nvim';
+  {'nvim-telescope/telescope-fzy-native.nvim', run='git submodule update --init --recursive'};
   -- git sidebar and manipulating changes
   'airblade/vim-gitgutter';
   -- easy comment manipulation
