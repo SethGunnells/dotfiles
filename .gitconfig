@@ -1,22 +1,35 @@
 [user]
-	name = Seth Gunnells
-	email = seth.gunnells@asurion.com
+  name = Seth Gunnells
 [status]
-	short = true
-	branch = true
+  short = true
+  branch = true
 [push]
-	default = current
+  default = current
 [core]
-	excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=1,5 -RFX
 [alias]
-	ap = add --patch
-	co = checkout
-	cm = commit
-	d = diff
-	dc = diff --cached
-	pfl = push --force-with-lease
-	s = status
-	tidy = !git branch --merged | ag -v \"^(\\*|master|develop)\" | xargs git branch -d
-[pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
+  ap = add --patch
+  co = checkout
+  cm = commit
+  d = diff
+  dc = diff --cached
+  pfl = push --force-with-lease
+  s = status
+  tidy = !git branch --merged | ag -v \"^(\\*|master|develop)\" | xargs git branch -d
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[include]
+  path = ~/.email
+
