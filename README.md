@@ -4,6 +4,11 @@ This is a full repository of my development environment as it currently stands. 
 
 ## Steps
 
+### Run `init.sh` from this repo
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/SethGunnells/dotfiles/master/init.sh)"
+```
+
 ### Set up Firefox
 My current preferred browser is [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/).
 
@@ -15,139 +20,22 @@ I use Firefox Color to theme it. [This is the theme I made.](https://color.firef
 Change default search engine to DuckDuckGo: `set searchengine duckduckgo`
 
 ### Set up 1Password
-- [Download 1Password](https://1password.com/)
 - Log in
-- Add browser extensions
+- Add browser extension
 
 ### Set up SSH key to pull down this repo
-Github has an [excellent article](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this.
-
-### Dev folder
-Add a folder under `~` called `dev`, cd into it, and clone this repo.
+Github has an [excellent article](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on this.
 
 ### Set up Terminal
-- Apply the terminal preferences file in this repo
-- Use [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans/releases) as the font
+- Setup terminal preferences file in this repo
+    - Set new italic TERM profile
+    - Set font
+- Setup neovim plugins
 
-### Alfred
-- [Download Alfred](https://www.alfredapp.com/)
-- Apply Powerpack from 1Password vault
-- Sync settings to iCloud
+### Raycast
 - Disable Spotlight
-- Replace with Alfred's hotkey
-- Use Nord theme contained in this repo
-
-### Set up ZSH
-I use:
-- [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh): `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-- [Pure Prompt](https://github.com/sindresorhus/pure) (See setup instructions below)
-- [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-#### Setting Up Pure Prompt
-Install pure globally through npm
-```sh
-npm install --global pure-prompt
-```
-
-Copy `prompt-pure-setup` and `async` from this repo into `~/.oh-my-zsh/functions`
-```sh
-mkdir ~/.oh-my-zsh/functions
-cp async prompt_pure_setup ~/.oh-my-zsh/functions
-```
-
-In `.zshrc`, set `ZSH_THEME=""` and add the following lines:
-```sh
-autoload -U promptinit; promptinit
-prompt pure
-```
-
-#### Setting Up Zsh Syntax Highlighting
-
-Clone the zsh-syntax-highlighting repository into plugins folder
-```sh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-#### Default .zshrc
-**NOTE:** Some of the lines in this .zshrc file have to do with command line tools
-installed in a later step.
-
-```sh
-export ZSH=$HOME/.oh-my-zsh
-
-plugins=(git zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
-
-autoload -U promptinit; promptinit
-prompt pure
-
-# may need to add this if Oh My ZSH complains about unsafe completion directories
-ZSH_DISABLE_COMPFIX=true
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
-export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
-
-alias cat="bat"
-alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-alias help="tldr"
-alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias top="sudo htop"
-```
-
-### Set up command line tools
-- Install [Homebrew](https://brew.sh/)
-- Install the following Homebrew packages:
-  - `bat`
-  - `csvkit`
-  - `diff-so-fancy`
-  - `fd`
-  - `fzf`
-  - `htop`
-  - `jq`
-  - `mpd`
-  - `n`
-  - `ncdu`
-  - `ncmpcpp`
-  - `the_silver_searcher` (`ag`)
-  - `tldr`
-- Install the following global Node tools:
-  - `npx`
-  - `prettier`
-- Link config directory for nvim: `ln -s nvim ~/.config/nvim`
-- Link the tmux config: `ln -s .tmux.conf ~/.tmux.conf`
-
-#### Setting Up Git
-Copy `.gitconfig` and `.gitignore` into the home directory. Change the user
-email in `.gitconfig` to whatever is appropriate for this machine.
-
-#### Setting Up FZF
-Add useful key bindings and completion like so: `$(brew --prefix)/opt/fzf/install`
-
-#### Setting Up Node
-Run the following:
-```sh
-n lts
-```
-
-You may need to modify the ownership of certain directories so that you don't
-have to run this with sudo. Additionally, a version of Node will be installed
-with Yarn. Running the above command is mainly to make sure that `n` works.
-
-#### Setting Up Tmuxinator
-Install tmuxinator via:
-```sh
-sudo gem install tmuxinator -n /usr/local/bin
-```
-
-You may need to override the Mac system ruby by installing it via Homebrew and
-prefixing it in your $PATH like so in the .zshrc:
-```sh
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-```
-
-#### Setting Up Beets, MPD and NCMPCPP
+- Set shortcut
+- Set prefered hotkeys, scripts, and quicklinks
 
 ### Setting Up Slack (If Necessary)
 Install as normal and apply this theme:
@@ -155,8 +43,3 @@ Install as normal and apply this theme:
 #2E3440,#434C5E,#81A1C1,#ECEFF4,#434C5E,#ECEFF4,#A3BE8C,#BF616A
 ```
 
-## Todo
-- [ ] Add install link for Spotify
-- [ ] Add install instructions for MPD and NCMPCPP
-- [ ] Add section on VSCode (installation, theming, plugins)
-- [ ] Add section on Dash
