@@ -223,6 +223,7 @@ const linkConfigFiles = async () => {
   const configs = [
     { name: 'bat', srcFile: 'batConfig', path: `${hm}/.config/bat`, destFile: 'config' },
     { name: 'git', srcFile: '.gitconfig', path: `${hm}` },
+    { name: 'iTerm2', srcFile: 'com.googlecode.iterm2.plist', path: `${hm}` },
     { name: 'nvim', srcFile: 'nvim', path: `${hm}/.config` },
     { name: 'tmux', srcFile: '.tmux.conf', path: `${hm}` },
     { name: 'zsh', srcFile: '.zshrc', path: `${hm}` }
