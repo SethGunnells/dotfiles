@@ -32,6 +32,7 @@ o.shiftwidth = 2
 o.termguicolors = true
 
 cmd('autocmd BufRead,BufNewFile .eslintrc set filetype=json')
+cmd('autocmd BufRead,BufNewFile *.conf set filetype=hocon')
 
 -------------
 -- PLUGINS --
