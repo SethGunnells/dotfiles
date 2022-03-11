@@ -38,7 +38,7 @@ cmd('autocmd BufRead,BufNewFile *.conf set filetype=hocon')
 -- PLUGINS --
 -------------
 
-require 'paq-nvim' {
+require 'paq' {
   -- package manager
   'savq/paq-nvim';
   -- fancy icons for nvim
