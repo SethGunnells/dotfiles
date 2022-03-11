@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 
-require'telescope'.setup()
+require'telescope'.setup({ defaults = {path_display = { shorten = 3 }} })
 require'telescope'.load_extension('fzy_native')
 telescope = require'telescope.builtin'
 
