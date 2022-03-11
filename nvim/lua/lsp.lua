@@ -15,7 +15,7 @@ lspconfig.tsserver.setup{
 
 -- ESLint and Prettier
 lspconfig.diagnosticls.setup{
-  filetypes = {"javascript", "typescript"},
+  filetypes = {"javascript", "json", "typescript", "typescriptreact"},
   root_dir = function(fname)
     return util.root_pattern("tsconfig.json")(fname)
       or util.root_pattern(".eslintrc.js")(fname)
@@ -62,10 +62,14 @@ lspconfig.diagnosticls.setup{
     },
     filetypes = {
       javascript = "eslint",
-      typescript = "eslint"
+      typescript = "eslint",
+      typescriptreact = "eslint"
     },
     formatFiletypes = {
-      javascript = 'prettier'
+      javascript = 'prettier',
+      json = 'prettier',
+      typescript = 'prettier',
+      typescriptreact = 'prettier'
     }
   }
 }
