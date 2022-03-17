@@ -1,38 +1,7 @@
 -- See this for tips on Lua + Neovim:
 -- https://github.com/nanotee/nvim-lua-guide
 
-local map = vim.api.nvim_set_keymap
-local g = vim.g
-local o = vim.o
-local api = vim.api
-local cmd = api.nvim_command
-
--- map the leader key
-map('n', '<Space>', '', { noremap = true })
-g.mapleader = ' '
-
--- use 'jk' to stop editing
-map('i', 'jk', '<Escape>', { noremap = true })
-
--- Use a popup menu for completions and don't preselect an option
-o.completeopt = 'menuone,noselect'
--- Uses spaces instead of tabs
-o.expandtab = true
--- Keep buffers open when abandoned (not visible)
--- Useful for plugins like barbar that manage buffers
-o.hidden = true
--- Add line numbers
-o.number = true
--- Number of rows/columns to keep visible around the cursor
-o.scrolloff = 5
-o.sidescrolloff = 10
--- Number of spaces to use for tabs
-o.shiftwidth = 2
--- Allow 256-bit colors
-o.termguicolors = true
-
-cmd('autocmd BufRead,BufNewFile .eslintrc set filetype=json')
-cmd('autocmd BufRead,BufNewFile *.conf set filetype=hocon')
+require'basic-setup'
 
 -------------
 -- PLUGINS --
@@ -41,50 +10,71 @@ cmd('autocmd BufRead,BufNewFile *.conf set filetype=hocon')
 require 'paq' {
   -- package manager
   'savq/paq-nvim';
+  -- supporting packages
+  'nvim-lua/popup.nvim';
+  'nvim-lua/plenary.nvim';
+  'MunifTanjim/nui.nvim';
   -- fancy icons for nvim
   'kyazdani42/nvim-web-devicons';
   -- fancy status line
-  'hoob3rt/lualine.nvim';
-  -- nord theme with TreeSitter support
-  'shaunsingh/nord.nvim';
-  -- add easy LSP configs
-  'neovim/nvim-lspconfig';
-  -- add autocomplete
-  'hrsh7th/nvim-compe';
-  -- allow plugins to use the . command
-  'tpope/vim-repeat';
+  'nvim-lualine/lualine.nvim';
   -- TreeSitter manager
   'nvim-treesitter/nvim-treesitter';
-  -- create pairs for sensible characters automatically
-  'jiangmiao/auto-pairs';
+  'nvim-treesitter/nvim-treesitter-textobjects';
+  -- add easy LSP configs
+  'neovim/nvim-lspconfig';
   -- quickly jump around
   'ggandor/lightspeed.nvim';
-  -- easily change surrounding characters
-  'tpope/vim-surround';
+  -- add autocomplete
+  'hrsh7th/cmp-nvim-lsp';
+  'hrsh7th/cmp-buffer';
+  'hrsh7th/cmp-path';
+  'hrsh7th/cmp-cmdline';
+  'hrsh7th/nvim-cmp';
+  'hrsh7th/cmp-vsnip';
+  'hrsh7th/vim-vsnip';
   -- fancy tabbar
-  'romgrk/barbar.nvim';
+  'akinsho/bufferline.nvim';
   -- file tree
   'kyazdani42/nvim-tree.lua';
+  -- easily manage comments
+  'terrortylor/nvim-comment';
+  -- nord theme with TreeSitter support
+  'shaunsingh/nord.nvim';
+  -- manage html-like tags automatically
+  'windwp/nvim-ts-autotag';
+  -- create pairs for sensible characters automatically
+  'windwp/nvim-autopairs';
+  -- guides for indentation level
+  'lukas-reineke/indent-blankline.nvim';
+  -- dims sections of code not currently being edited
+  'folke/twilight.nvim';
+  -- easily change surrounding characters
+  'tpope/vim-surround';
   -- telescope
-  'nvim-lua/popup.nvim';
-  'nvim-lua/plenary.nvim';
   'nvim-telescope/telescope.nvim';
   {'nvim-telescope/telescope-fzy-native.nvim', run='git submodule update --init --recursive'};
-  -- git sidebar and manipulating changes
-  'airblade/vim-gitgutter';
-  -- easy comment manipulation
-  'tpope/vim-commentary';
+  -- git sidebar and git blame
+  'lewis6991/gitsigns.nvim';
+  -- improved ui
+  'stevearc/dressing.nvim';
+  -- clipboard manager
+  'AckslD/nvim-neoclip.lua';
+  -- UI for diagnositics, quickfix, loclist, etc.
+  'folke/trouble.nvim';
+  'folke/lsp-colors.nvim';
 }
 
--- Setup Nord color scheme
-require'nord'.set()
-
+require'simple-plugins'
+require'autopairs'
+require'theme'
 require'statusline'
 require'treesitter'
 require'lsp'
 require'completion'
 require'tree'
 require'tabs'
+require'surround'
 require'telescope-conf'
 
 -----------------

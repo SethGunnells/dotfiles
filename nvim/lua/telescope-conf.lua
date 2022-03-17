@@ -1,20 +1,48 @@
 local map = vim.api.nvim_set_keymap
+telescope = require'telescope'
+tsBuiltin = require'telescope.builtin'
 
-require'telescope'.setup({ defaults = {path_display = { shorten = 3 }} })
-require'telescope'.load_extension('fzy_native')
-telescope = require'telescope.builtin'
+telescope.setup({
+  defaults = {
+    layout_config = {
+      horizontal = {
+        height = function(_, c, r) return r - 2 end,
+        width = function(_, c) return c - 2 end,
+      },
+    },
+    path_display = {
+      shorten = 3,
+    },
+  },
+})
 
-map('n', '<leader>f', '<cmd>lua telescope.find_files()<CR>', { noremap = true, silent = true })
-map('n', '<leader>g', '<cmd>lua telescope.grep_string()<CR>', { noremap = true, silent = true })
-map('n', '<leader>G', '<cmd>lua telescope.live_grep()<CR>', { noremap = true, silent = true })
-map('n', '<leader><leader>b', '<cmd>lua telescope.buffers()<CR>', { noremap = true, silent = true })
-map('n', '<leader>r', '<cmd>lua telescope.lsp_references()<CR>', { noremap = true, silent = true })
-map('n', '<leader>d', '<cmd>lua telescope.lsp_definitions()<CR>', { noremap = true, silent = true })
-map('n', '<leader><leader>s', '<cmd>lua telescope.lsp_document_symbols()<CR>', { noremap = true, silent = true })
-map('n', '<leader>a', '<cmd>lua telescope.lsp_code_actions()<CR>', { noremap = true, silent = true })
-map('x', '<leader>a', '<cmd>lua telescope.lsp_range_code_actions()<CR>', { noremap = true, silent = true })
-map('n', '<leader>e', '<cmd>lua telescope.lsp_document_diagnostics()<CR>', { noremap = true, silent = true })
-map('n', '<leader>i', '<cmd>lua telescope.lsp_implementations()<CR>', { noremap = true, silent = true })
-map('n', '<leader><leader>t', '<cmd>lua telescope.treesitter()<CR>', { noremap = true, silent = true })
-map('n', '<leader><leader>B', '<cmd>lua telescope.builtin()<CR>', { noremap = true, silent = true })
+require'neoclip'.setup()
+telescope.load_extension('fzy_native')
+telescope.load_extension('neoclip')
+
+local trouble = require'trouble.providers.telescope'
+telescope.setup {
+  defaults = {
+    mappings = {
+      i = { ["<c-t>"] = trouble.smart_open_with_trouble },
+      n = { ["<c-t>"] = trouble.smart_open_with_trouble },
+    },
+  },
+}
+
+map('n', '<leader>f', '<cmd>lua tsBuiltin.find_files({ hidden = true })<cr>', { noremap = true, silent = true })
+map('n', '<leader>g', '<cmd>lua tsBuiltin.live_grep()<cr>', { noremap = true, silent = true })
+map('n', '<leader>G', '<cmd>lua tsBuiltin.grep_string()<cr>', { noremap = true, silent = true })
+map('n', '<leader><leader>/', '<cmd>lua tsBuiltin.current_buffer_fuzzy_find()<cr>', { noremap = true, silent = true })
+map('n', '<leader>b', '<cmd>lua tsBuiltin.buffers()<cr>', { noremap = true, silent = true })
+map('n', '<leader>r', '<cmd>lua tsBuiltin.lsp_references()<cr>', { noremap = true, silent = true })
+map('n', '<leader>d', '<cmd>lua tsBuiltin.lsp_definitions()<cr>', { noremap = true, silent = true })
+map('n', '<leader>T', '<cmd>lua tsBuiltin.lsp_type_definitions()<cr>', { noremap = true, silent = true })
+map('n', '<leader>i', '<cmd>lua tsBuiltin.lsp_implementations()<cr>', { noremap = true, silent = true })
+map('n', '<leader>a', '<cmd>lua tsBuiltin.lsp_code_actions()<cr>', { noremap = true, silent = true })
+map('x', '<leader>a', '<cmd>lua tsBuiltin.lsp_range_code_actions()<cr>', { noremap = true, silent = true })
+map('n', '<leader><leader>s', '<cmd>lua tsBuiltin.lsp_document_symbols()<cr>', { noremap = true, silent = true })
+map('n', '<leader>e', '<cmd>lua tsBuiltin.diagnostics({ bufnr = 0 })<cr>', { noremap = true, silent = true })
+map('n', '<leader>R', '<cmd>lua telescope.extensions.neoclip.default()<cr>', { noremap = true, silent = true })
+map('n', '<leader>+', '<cmd>lua telescope.extensions.neoclip.plus()<cr>', { noremap = true, silent = true })
 

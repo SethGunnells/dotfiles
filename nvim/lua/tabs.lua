@@ -1,11 +1,31 @@
+local nord = require'nord.colors'
+
+require'bufferline'.setup {
+  highlights = {
+    fill = {
+      guibg = nord.nord1_gui,
+    },
+  },
+  options = {
+    offsets = {
+      {
+        filetype = 'NvimTree',
+        text = '  File Explorer',
+        text_align = 'center',
+        highlight = 'BufferLineNvimTreeOffset'
+      },
+    },
+    show_close_icon = false,
+  },
+}
+
 local map = vim.api.nvim_set_keymap
-map('n', '<leader>,', ':BufferPrevious<CR>', { noremap = true, silent = true })
-map('n', '<leader>.', ':BufferNext<CR>', { noremap = true, silent = true })
-map('n', '<leader><', ':BufferMovePrevious<CR>', { noremap = true, silent = true })
-map('n', '<leader>>', ':BufferMoveNext<CR>', { noremap = true, silent = true })
-map('n', '<leader>c', ':BufferClose<CR>', { noremap = true, silent = true })
-map('n', '<leader>x', ':w | BufferClose<CR>', { noremap = true, silent = true })
-map('n', '<leader>s', ':BufferPick<CR>', { noremap = true, silent = true })
-map('n', '<leader>bd', ':BufferOrderByDirectory<CR>', { noremap = true, silent = true })
-map('n', '<leader>bl', ':BufferOrderByLanguage<CR>', { noremap = true, silent = true })
+map('n', '<leader>,', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+map('n', '<leader>.', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+map('n', '<leader><', ':BufferLineMovePrev<CR>', { noremap = true, silent = true })
+map('n', '<leader>>', ':BufferLineMoveNext<CR>', { noremap = true, silent = true })
+map('n', '<leader><leader>c', ':bdelete<CR>', { noremap = true, silent = true })
+map('n', '<leader><leader>x', ':w | bdelete<CR>', { noremap = true, silent = true })
+map('n', '<leader>p', ':BufferLinePick<CR>', { noremap = true, silent = true })
+map('n', '<leader>P', ':BufferLinePickClose<CR>', { noremap = true, silent = true })
 

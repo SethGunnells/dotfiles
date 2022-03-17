@@ -3,8 +3,7 @@ require'lualine'.setup {
     theme = 'nord'
   },
   sections = {
-    lualine_x = {'encoding', 'filetype', {'diagnostics', sources = {'nvim_lsp'}}},
-    lualine_y = {}
+    lualine_x = {'encoding', 'filetype'},
   }
 }
 
