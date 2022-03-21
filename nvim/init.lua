@@ -56,8 +56,6 @@ require 'paq' {
   {'nvim-telescope/telescope-fzy-native.nvim', run='git submodule update --init --recursive'};
   -- git sidebar and git blame
   'lewis6991/gitsigns.nvim';
-  -- improved ui
-  'stevearc/dressing.nvim';
   -- clipboard manager
   'AckslD/nvim-neoclip.lua';
   -- UI for diagnositics, quickfix, loclist, etc.
