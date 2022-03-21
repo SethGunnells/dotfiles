@@ -45,6 +45,8 @@ lspconfig.tsserver.setup{
   capabilities = capabilities,
 }
 
+lspconfig.sumneko_lua.setup{}
+
 -- ESLint and Prettier
 lspconfig.diagnosticls.setup{
   filetypes = {"javascript", "json", "typescript", "typescriptreact"},
