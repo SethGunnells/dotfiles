@@ -34,11 +34,15 @@ vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float()]]
 
 map('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 -- Typescript Language Server
 lspconfig.tsserver.setup{
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
-  end;
+    client.resolved_capabilities.document_range_formatting = false
+  end,
+  capabilities = capabilities,
 }
 
 -- ESLint and Prettier
