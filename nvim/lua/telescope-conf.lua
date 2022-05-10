@@ -30,7 +30,7 @@ telescope.setup {
   },
 }
 
-map('n', '<leader>f', '<cmd>lua tsBuiltin.find_files({ hidden = true })<cr>', { noremap = true, silent = true })
+map('n', '<leader>f', '<cmd>lua tsBuiltin.find_files({ find_command = { "fd", "-E=.git", "--hidden" } })<cr>', { noremap = true, silent = true })
 map('n', '<leader>g', '<cmd>lua tsBuiltin.live_grep()<cr>', { noremap = true, silent = true })
 map('n', '<leader>G', '<cmd>lua tsBuiltin.grep_string()<cr>', { noremap = true, silent = true })
 map('n', '<leader><leader>/', '<cmd>lua tsBuiltin.current_buffer_fuzzy_find()<cr>', { noremap = true, silent = true })

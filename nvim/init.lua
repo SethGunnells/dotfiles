@@ -61,6 +61,8 @@ require 'paq' {
   -- UI for diagnositics, quickfix, loclist, etc.
   'folke/trouble.nvim';
   'folke/lsp-colors.nvim';
+  -- handlers for easily hooking into LSP
+  'jose-elias-alvarez/null-ls.nvim';
 }
 
 require'simple-plugins'
