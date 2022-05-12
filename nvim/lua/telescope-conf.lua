@@ -14,11 +14,17 @@ telescope.setup({
       shorten = 3,
     },
   },
+  extensions = {
+    ["ui-select"] = {
+      require('telescope.themes').get_dropdown{}
+    }
+  }
 })
 
 require'neoclip'.setup()
 telescope.load_extension('fzy_native')
 telescope.load_extension('neoclip')
+telescope.load_extension('ui-select')
 
 local trouble = require'trouble.providers.telescope'
 telescope.setup {
@@ -39,8 +45,6 @@ map('n', '<leader>r', '<cmd>lua tsBuiltin.lsp_references()<cr>', { noremap = tru
 map('n', '<leader>d', '<cmd>lua tsBuiltin.lsp_definitions()<cr>', { noremap = true, silent = true })
 map('n', '<leader>T', '<cmd>lua tsBuiltin.lsp_type_definitions()<cr>', { noremap = true, silent = true })
 map('n', '<leader>i', '<cmd>lua tsBuiltin.lsp_implementations()<cr>', { noremap = true, silent = true })
-map('n', '<leader>a', '<cmd>lua tsBuiltin.lsp_code_actions()<cr>', { noremap = true, silent = true })
-map('x', '<leader>a', '<cmd>lua tsBuiltin.lsp_range_code_actions()<cr>', { noremap = true, silent = true })
 map('n', '<leader><leader>s', '<cmd>lua tsBuiltin.lsp_document_symbols()<cr>', { noremap = true, silent = true })
 map('n', '<leader>e', '<cmd>lua tsBuiltin.diagnostics({ bufnr = 0 })<cr>', { noremap = true, silent = true })
 map('n', '<leader>R', '<cmd>lua telescope.extensions.neoclip.default()<cr>', { noremap = true, silent = true })
