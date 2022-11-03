@@ -1,6 +1,8 @@
 local map = vim.api.nvim_set_keymap
 telescope = require'telescope'
 tsBuiltin = require'telescope.builtin'
+local trouble = require'trouble.providers.telescope'
+local themes = require'telescope.themes'
 
 telescope.setup({
   defaults = {
@@ -9,14 +11,29 @@ telescope.setup({
         height = function(_, c, r) return r - 2 end,
         width = function(_, c) return c - 2 end,
       },
+      vertical = {
+        height = function(_, c, r) return r - 2 end,
+        width = function(_, c) return c - 2 end,
+      },
     },
-    path_display = {
-      shorten = 3,
+    mappings = {
+      i = { ["<c-t>"] = trouble.smart_open_with_trouble },
+      n = { ["<c-t>"] = trouble.smart_open_with_trouble },
     },
+    -- path_display = {
+    --   shorten = 3,
+    -- },
+  },
+  pickers = {
+    find_files = {
+      find_command = { "fd", "-t=f", "-t=l", "-E=.git", "--hidden"},
+      layout_strategy = "center",
+      previewer = false,
+    }
   },
   extensions = {
     ["ui-select"] = {
-      require('telescope.themes').get_dropdown{}
+      themes.get_dropdown{}
     }
   }
 })
@@ -26,17 +43,7 @@ telescope.load_extension('fzy_native')
 telescope.load_extension('neoclip')
 telescope.load_extension('ui-select')
 
-local trouble = require'trouble.providers.telescope'
-telescope.setup {
-  defaults = {
-    mappings = {
-      i = { ["<c-t>"] = trouble.smart_open_with_trouble },
-      n = { ["<c-t>"] = trouble.smart_open_with_trouble },
-    },
-  },
-}
-
-map('n', '<leader>f', '<cmd>lua tsBuiltin.find_files({ find_command = { "fd", "-E=.git", "--hidden" } })<cr>', { noremap = true, silent = true })
+map('n', '<leader>f', '<cmd>lua tsBuiltin.find_files()<cr>', { noremap = true, silent = true })
 map('n', '<leader>g', '<cmd>lua tsBuiltin.live_grep()<cr>', { noremap = true, silent = true })
 map('n', '<leader>G', '<cmd>lua tsBuiltin.grep_string()<cr>', { noremap = true, silent = true })
 map('n', '<leader><leader>/', '<cmd>lua tsBuiltin.current_buffer_fuzzy_find()<cr>', { noremap = true, silent = true })

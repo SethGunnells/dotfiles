@@ -21,6 +21,7 @@ require 'paq' {
   -- TreeSitter manager
   'nvim-treesitter/nvim-treesitter';
   'nvim-treesitter/nvim-treesitter-textobjects';
+  'nvim-treesitter/nvim-treesitter-context';
   -- add easy LSP configs
   'neovim/nvim-lspconfig';
   -- quickly jump around
@@ -64,6 +65,7 @@ require 'paq' {
   'folke/lsp-colors.nvim';
   -- handlers for easily hooking into LSP
   'jose-elias-alvarez/null-ls.nvim';
+  'ojroques/nvim-bufdel';
 }
 
 require'simple-plugins'

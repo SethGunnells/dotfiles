@@ -2,12 +2,7 @@ local M = {}
 
 function M.format()
   vim.lsp.buf.format {
-    filter = function(clients)
-      return vim.tbl_filter(
-        function(client) return client.name ~= "tsserver" end,
-        clients
-      )
-    end
+    filter = function(client) return client.name ~= "tsserver" end,
   }
 end
 
