@@ -18,6 +18,7 @@ export EDITOR="$VISUAL"
 
 alias cat="bat"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias gcob="git checkout \$(git branch | fzf)"
 alias gsl="git status --long"
 alias help="tldr"
 alias iip="curl ifconfig.me"
