@@ -15,7 +15,7 @@
   dc = diff --cached
   pfl = push --force-with-lease
   s = status
-  tidy = !git branch --merged | ag -v \"^(\\*|master|develop)\" | xargs git branch -d
+  tidy = "!git branch -vv | rg \": gone\" | rg -o --trim \"^  \\S+\" | xargs git branch -D"
 [color]
   ui = true
 [color "diff-highlight"]
