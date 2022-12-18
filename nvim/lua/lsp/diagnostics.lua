@@ -23,9 +23,7 @@ vim.diagnostic.config({
   }
 })
 
--- make sure the diagnostic float doesn't auto open instantly
-vim.o.updatetime = 250
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float({scope="cursor"})]]
+vim.keymap.set('n', '<leader>H', function() vim.diagnostic.open_float({ scope = 'cursor' }) end)
 vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev)
 
