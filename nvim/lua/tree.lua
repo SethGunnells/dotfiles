@@ -5,9 +5,6 @@ require'nvim-tree'.setup({
       resize_window = true,
     },
   },
-  view = {
-    width = 50,
-  },
 })
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { noremap = true })
 
