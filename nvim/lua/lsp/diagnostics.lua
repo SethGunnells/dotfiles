@@ -23,7 +23,8 @@ vim.diagnostic.config({
   }
 })
 
-vim.keymap.set('n', '<leader>H', function() vim.diagnostic.open_float({ scope = 'cursor' }) end)
-vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev)
+local map = vim.keymap.set
+map('n', '<leader>H', function() vim.diagnostic.open_float({ scope = 'cursor' }) end)
+map('n', '<leader>j', vim.diagnostic.goto_next)
+map('n', '<leader>k', vim.diagnostic.goto_prev)
 

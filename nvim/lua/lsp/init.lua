@@ -1,7 +1,7 @@
-local map = vim.api.nvim_set_keymap
-map('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
-map('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', { noremap = true, silent = true })
-map('x', '<leader>a', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', { noremap = true, silent = true })
+local map = vim.keymap.set
+map('n', '<leader>h', vim.lsp.buf.hover)
+map('n', '<leader>a', vim.lsp.buf.code_action)
+map('x', '<leader>a', vim.lsp.buf.range_code_action)
 
 require'lsp.diagnostics'
 require'lsp.formatting'.setupFormatOnSave()

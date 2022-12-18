@@ -1,6 +1,5 @@
-local map = vim.api.nvim_set_keymap
-telescope = require'telescope'
-tsBuiltin = require'telescope.builtin'
+local telescope = require'telescope'
+local tsBuiltin = require'telescope.builtin'
 local trouble = require'trouble.providers.telescope'
 local themes = require'telescope.themes'
 
@@ -8,11 +7,11 @@ telescope.setup({
   defaults = {
     layout_config = {
       horizontal = {
-        height = function(_, c, r) return r - 2 end,
+        height = function(_, _, r) return r - 2 end,
         width = function(_, c) return c - 2 end,
       },
       vertical = {
-        height = function(_, c, r) return r - 2 end,
+        height = function(_, _, r) return r - 2 end,
         width = function(_, c) return c - 2 end,
       },
     },
@@ -20,9 +19,9 @@ telescope.setup({
       i = { ["<c-t>"] = trouble.smart_open_with_trouble },
       n = { ["<c-t>"] = trouble.smart_open_with_trouble },
     },
-    -- path_display = {
-    --   shorten = 3,
-    -- },
+    path_display = {
+      shorten = 4,
+    },
   },
   pickers = {
     find_files = {
@@ -43,17 +42,18 @@ telescope.load_extension('fzy_native')
 telescope.load_extension('neoclip')
 telescope.load_extension('ui-select')
 
-map('n', '<leader>f', '<cmd>lua tsBuiltin.find_files()<cr>', { noremap = true, silent = true })
-map('n', '<leader>g', '<cmd>lua tsBuiltin.live_grep()<cr>', { noremap = true, silent = true })
-map('n', '<leader>G', '<cmd>lua tsBuiltin.grep_string()<cr>', { noremap = true, silent = true })
-map('n', '<leader><leader>/', '<cmd>lua tsBuiltin.current_buffer_fuzzy_find()<cr>', { noremap = true, silent = true })
-map('n', '<leader>b', '<cmd>lua tsBuiltin.buffers()<cr>', { noremap = true, silent = true })
-map('n', '<leader>r', '<cmd>lua tsBuiltin.lsp_references()<cr>', { noremap = true, silent = true })
-map('n', '<leader>d', '<cmd>lua tsBuiltin.lsp_definitions()<cr>', { noremap = true, silent = true })
-map('n', '<leader>T', '<cmd>lua tsBuiltin.lsp_type_definitions()<cr>', { noremap = true, silent = true })
-map('n', '<leader>i', '<cmd>lua tsBuiltin.lsp_implementations()<cr>', { noremap = true, silent = true })
-map('n', '<leader><leader>s', '<cmd>lua tsBuiltin.lsp_document_symbols()<cr>', { noremap = true, silent = true })
-map('n', '<leader>e', '<cmd>lua tsBuiltin.diagnostics({ bufnr = 0 })<cr>', { noremap = true, silent = true })
-map('n', '<leader>R', '<cmd>lua telescope.extensions.neoclip.default()<cr>', { noremap = true, silent = true })
-map('n', '<leader>+', '<cmd>lua telescope.extensions.neoclip.plus()<cr>', { noremap = true, silent = true })
+local map = vim.keymap.set
+map('n', '<leader>f', tsBuiltin.find_files)
+map('n', '<leader>g', tsBuiltin.live_grep)
+map('n', '<leader>G', tsBuiltin.grep_string)
+map('n', '<leader><leader>/', tsBuiltin.current_buffer_fuzzy_find)
+map('n', '<leader>b', tsBuiltin.buffers)
+map('n', '<leader>r', tsBuiltin.lsp_references)
+map('n', '<leader>d', tsBuiltin.lsp_definitions)
+map('n', '<leader>T', tsBuiltin.lsp_type_definitions)
+map('n', '<leader>i', tsBuiltin.lsp_implementations)
+map('n', '<leader><leader>s', tsBuiltin.lsp_document_symbols)
+map('n', '<leader>e', function() tsBuiltin.diagnostics({ bufnr = 0 }) end)
+map('n', '<leader>R', telescope.extensions.neoclip.default)
+map('n', '<leader>+', telescope.extensions.neoclip.plus)
 

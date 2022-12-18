@@ -6,5 +6,5 @@ require'nvim-tree'.setup({
     },
   },
 })
-vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>t', require'nvim-tree.api'.tree.toggle)
 

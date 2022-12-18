@@ -18,13 +18,13 @@ require'bufferline'.setup {
   },
 }
 
-local map = vim.api.nvim_set_keymap
-map('n', '<leader>,', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
-map('n', '<leader>.', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-map('n', '<leader><', ':BufferLineMovePrev<CR>', { noremap = true, silent = true })
-map('n', '<leader>>', ':BufferLineMoveNext<CR>', { noremap = true, silent = true })
-map('n', '<leader><leader>c', ':BufDel<CR>', { noremap = true, silent = true })
-map('n', '<leader><leader>x', ':w | BufDel<CR>', { noremap = true, silent = true })
-map('n', '<leader>p', ':BufferLinePick<CR>', { noremap = true, silent = true })
-map('n', '<leader>P', ':BufferLinePickClose<CR>', { noremap = true, silent = true })
+local map = vim.keymap.set
+map('n', '<leader>,', ':BufferLineCyclePrev<CR>', { silent = true })
+map('n', '<leader>.', ':BufferLineCycleNext<CR>', { silent = true })
+map('n', '<leader><', ':BufferLineMovePrev<CR>', { silent = true })
+map('n', '<leader>>', ':BufferLineMoveNext<CR>', { silent = true })
+map('n', '<leader><leader>c', ':BufDel<CR>', { silent = true })
+map('n', '<leader><leader>x', ':w | BufDel<CR>', { silent = true })
+map('n', '<leader>p', ':BufferLinePick<CR>', { silent = true })
+map('n', '<leader>P', ':BufferLinePickClose<CR>', { silent = true })
 

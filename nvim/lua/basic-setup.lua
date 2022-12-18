@@ -1,19 +1,18 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local g = vim.g
 local o = vim.o
-local api = vim.api
-local cmd = api.nvim_command
+local cmd = vim.api.nvim_command
 
 -- map the leader key
-map('n', '<Space>', '', { noremap = true })
+map('n', '<Space>', '')
 g.mapleader = ' '
 
 -- use 'jk' to stop editing
-map('i', 'jk', '<Escape>', { noremap = true })
+map('i', 'jk', '<Escape>')
 
 -- More easily copy to system clipboard
-map('n', '<leader>y', '"+y', { noremap = true })
-map('x', '<leader>y', '"+y', { noremap = true })
+map('n', '<leader>y', '"+y')
+map('x', '<leader>y', '"+y')
 
 -- Use a popup menu for completions and don't preselect an option
 o.completeopt = 'menu,menuone,noselect'
