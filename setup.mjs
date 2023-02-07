@@ -180,14 +180,17 @@ const installPackages = async () => {
 const installApps = async shouldInstallSlack => {
   const brewCasks = {
     '1password': '1Password',
+    bartender: 'Bartender',
     dash: 'Dash',
+    figma: 'Figma',
     'firefox-developer-edition': 'Firefox Developer Edition',
+    focus: 'Focus',
     'google-chrome': 'Chrome',
-    hammerspoon: 'Hammerspoon',
     hey: 'Hey',
+    insomnia: 'Insomnia',
     iterm2: 'iTerm2',
+    obsidian: 'Obsidian',
     raycast: 'Raycast',
-    slack: 'Slack',
     spotify: 'Spotify',
   }
 
