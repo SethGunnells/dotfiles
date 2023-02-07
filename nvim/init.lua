@@ -54,7 +54,6 @@ require 'paq' {
   'tpope/vim-surround';
   -- telescope
   'nvim-telescope/telescope.nvim';
-  {'nvim-telescope/telescope-fzy-native.nvim', run='git submodule update --init --recursive'};
   'nvim-telescope/telescope-ui-select.nvim';
   -- git sidebar and git blame
   'lewis6991/gitsigns.nvim';

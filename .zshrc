@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(git vi-mode tmux tmuxinator zsh-syntax-highlighting shrink-path)
+plugins=(git vi-mode tmux zsh-syntax-highlighting shrink-path)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,11 +20,6 @@ alias cat="bat"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias gcob="git checkout \$(git branch | fzf)"
 alias gsl="git status --long"
-alias help="tldr"
-alias iip="curl ifconfig.me"
-alias la="logo-ls -lah"
-alias lip="ipconfig getifaddr en0"
-alias ls="logo-ls"
 alias pjq="pbpaste | jq"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias tkall="tl -F \"#{session_name}\" | xargs -I _ tmux kill-session -t _"
