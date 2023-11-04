@@ -37,4 +37,5 @@ vim.opt.splitright = true
 cmd('autocmd BufRead,BufNewFile .eslintrc set filetype=json')
 -- Add automatic highlighting for HOCON
 cmd('autocmd BufRead,BufNewFile *.conf set filetype=hocon')
-
+-- Add automatic highlighting for vlang
+cmd('autocmd BufRead,BufNewFile *.v set filetype=vlang')
