@@ -7,4 +7,5 @@ require'lsp.tsserver'
 require'lsp.lua'
 require'lsp.null-ls'
 map({ 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
+map('n', '<leader><leader>r', vim.lsp.buf.rename)
 
