@@ -25,4 +25,4 @@
   colorMoved = default
 [include]
   path = ~/.email
-
+  path = ~/.gitconfig.signing
