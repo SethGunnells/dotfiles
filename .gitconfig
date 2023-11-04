@@ -6,30 +6,23 @@
 [push]
   default = current
 [core]
-  pager = diff-so-fancy | less --tabs=1,5 -RFX
+  pager = delta
 [alias]
-  ap = add --patch
   co = checkout
   cm = commit
-  d = diff
-  dc = diff --cached
-  pfl = push --force-with-lease
-  s = status
   tidy = "!git branch -vv | rg \": gone\" | rg -o --trim \"^  \\S+\" | xargs git branch -D"
-[color]
-  ui = true
-[color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
-[color "diff"]
-  meta = 11
-  frag = magenta bold
-  commit = yellow bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  syntax-theme = Nord
+[merge]
+  conflictstyle = diff3
+  tool = vimdiff
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[diff]
+  colorMoved = default
 [include]
   path = ~/.email
 
