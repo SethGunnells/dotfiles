@@ -8,7 +8,8 @@ end
 
 function M.setupFormatOnSave()
   local cmd = vim.api.nvim_command
-  cmd([[command FormatEnable augroup sethfmt | exe "autocmd BufWrite * lua require'lsp/formatting'.format()" | augroup END]])
+  cmd(
+      [[command FormatEnable augroup sethfmt | exe "autocmd BufWrite * lua require'lsp/formatting'.format()" | augroup END]])
   cmd([[command FormatDisable autocmd! sethfmt BufWrite *]])
   cmd([[FormatEnable]])
 end

@@ -1,9 +1,5 @@
-require'lualine'.setup {
-  options = {
-    theme = 'nord'
-  },
-  sections = {
-    lualine_x = {'encoding', 'filetype'},
-  }
+require 'lualine'.setup {
+    sections = {
+        lualine_x = { 'encoding', 'filetype' },
+    }
 }
-
