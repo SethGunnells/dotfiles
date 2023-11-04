@@ -20,6 +20,7 @@ require'nvim-treesitter.configs'.setup {
     'php',
     'scala',
     'tsx',
+    'typescript',
     'vim',
     'yaml',
   },
