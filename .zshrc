@@ -1,18 +1,20 @@
+ZSH_THEME=""
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(git vi-mode tmux zsh-syntax-highlighting shrink-path)
+MODE_INDICATOR=""
+plugins=(git tmux zsh-syntax-highlighting shrink-path zsh-vim-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 autoload -U promptinit; promptinit
 prompt pure
 
 ZSH_DISABLE_COMPFIX=true
 
-export PATH="/usr/local/opt/ruby/bin:/usr/local/bin:$PATH"
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
@@ -25,3 +27,5 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias tkall="tl -F \"#{session_name}\" | xargs -I _ tmux kill-session -t _"
 alias top="sudo htop"
 
+source /Users/seth.gunnells/.config/broot/launcher/bash/br
+source ~/.localrc.zsh
