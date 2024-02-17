@@ -1,3 +1,17 @@
+-- bootstrap lazy plugin loader
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
 local map = vim.keymap.set
 local g = vim.g
 local o = vim.o
@@ -8,11 +22,10 @@ map('n', '<Space>', '')
 g.mapleader = ' '
 
 -- use 'jk' to stop editing
-map('i', 'jk', '<Escape>')
+map('i', 'jk', '<Escape>', { desc = 'Stop editing' })
 
 -- More easily copy to system clipboard
-map('n', '<leader>y', '"+y')
-map('x', '<leader>y', '"+y')
+map({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
 
 -- Use a popup menu for completions and don't preselect an option
 o.completeopt = 'menu,menuone,noselect'
